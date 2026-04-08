@@ -96,7 +96,7 @@ $users->delete($entity);
 | `Giginc\Mongodb\Database\Driver\Mongodb`                 | `Giginc\Cakephp5DriverMongodb\Database\Driver\Mongodb`         |
 | `Giginc\Mongodb\ORM\Table`                               | `Giginc\Cakephp5DriverMongodb\ORM\Table`                       |
 | `Giginc\Mongodb\ORM\Document`                            | `Giginc\Cakephp5DriverMongodb\ORM\Document`                    |
-| `Giginc\Mongodb\ORM\ResultSet`                           | `Giginc\Cakephp5DriverMongodb\ORM\ResultSet`                   |
+| `Giginc\Mongodb\ORM\ResultSet`                           | `Cake\Datasource\ResultSetDecorator` (Cake 標準を直接利用)     |
 | `Giginc\Mongodb\ORM\MongoFinder` / `MongoQuery`          | `Giginc\Cakephp5DriverMongodb\ORM\Query` (fluent, new design)  |
 
 ### API changes (non-exhaustive)
