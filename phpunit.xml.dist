@@ -7,7 +7,7 @@
     cacheDirectory=".phpunit.cache"
 >
     <testsuites>
-        <testsuite name="cakephp5-mongodb-driver">
+        <testsuite name="cakephp5-driver-mongodb">
             <directory>tests/TestCase/</directory>
         </testsuite>
     </testsuites>

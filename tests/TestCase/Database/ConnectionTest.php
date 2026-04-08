@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5MongodbDriver\Test\TestCase\Database;
+namespace Giginc\Cakephp5DriverMongodb\Test\TestCase\Database;
 
-use Giginc\Cakephp5MongodbDriver\Database\Connection;
-use Giginc\Cakephp5MongodbDriver\Database\Driver\Mongodb;
+use Giginc\Cakephp5DriverMongodb\Database\Connection;
+use Giginc\Cakephp5DriverMongodb\Database\Driver\Mongodb;
 use PHPUnit\Framework\TestCase;
 
 /**

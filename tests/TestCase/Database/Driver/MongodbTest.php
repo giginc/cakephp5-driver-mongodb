@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5MongodbDriver\Test\TestCase\Database\Driver;
+namespace Giginc\Cakephp5DriverMongodb\Test\TestCase\Database\Driver;
 
-use Giginc\Cakephp5MongodbDriver\Database\Driver\Mongodb;
+use Giginc\Cakephp5DriverMongodb\Database\Driver\Mongodb;
 use PHPUnit\Framework\TestCase;
 
 /**

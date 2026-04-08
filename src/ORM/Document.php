@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5MongodbDriver\ORM;
+namespace Giginc\Cakephp5DriverMongodb\ORM;
 
 use Cake\ORM\Entity;
 use MongoDB\BSON\ObjectId;

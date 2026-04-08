@@ -1,14 +1,14 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5MongodbDriver\ORM;
+namespace Giginc\Cakephp5DriverMongodb\ORM;
 
 use Cake\Datasource\Exception\RecordNotFoundException;
 use Cake\Event\EventDispatcherInterface;
 use Cake\Event\EventDispatcherTrait;
 use Cake\ORM\Entity;
-use Giginc\Cakephp5MongodbDriver\Database\Connection;
-use Giginc\Cakephp5MongodbDriver\Database\Driver\Mongodb;
+use Giginc\Cakephp5DriverMongodb\Database\Connection;
+use Giginc\Cakephp5DriverMongodb\Database\Driver\Mongodb;
 use MongoDB\BSON\ObjectId;
 use MongoDB\Collection as MongoCollection;
 use ReflectionClass;

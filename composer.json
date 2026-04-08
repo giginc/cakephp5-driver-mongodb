@@ -1,9 +1,9 @@
 {
-    "name": "giginc/cakephp5-mongodb-driver",
+    "name": "giginc/cakephp5-driver-mongodb",
     "description": "MongoDB datasource driver for CakePHP 5 (modern successor to giginc/mongodb).",
     "type": "cakephp-plugin",
     "keywords": ["cakephp", "cakephp5", "mongodb", "datasource", "driver", "orm", "plugin"],
-    "homepage": "https://github.com/giginc/cakephp5-mongodb-driver",
+    "homepage": "https://github.com/giginc/cakephp5-driver-mongodb",
     "license": "MIT",
     "authors": [
         {
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Giginc\\Cakephp5MongodbDriver\\": "src/"
+            "Giginc\\Cakephp5DriverMongodb\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Giginc\\Cakephp5MongodbDriver\\Test\\": "tests/"
+            "Giginc\\Cakephp5DriverMongodb\\Test\\": "tests/"
         }
     },
     "scripts": {
@@ -40,7 +40,7 @@
     },
     "extra": {
         "cakephp": {
-            "plugin": "Giginc/Cakephp5MongodbDriver"
+            "plugin": "Giginc/Cakephp5DriverMongodb"
         }
     },
     "minimum-stability": "stable",

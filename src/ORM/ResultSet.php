@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5MongodbDriver\ORM;
+namespace Giginc\Cakephp5DriverMongodb\ORM;
 
 use Cake\Datasource\ResultSetInterface;
 use Cake\ORM\Entity;

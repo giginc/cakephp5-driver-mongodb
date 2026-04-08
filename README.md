@@ -1,4 +1,4 @@
-# cakephp5-mongodb-driver
+# cakephp5-driver-mongodb
 
 MongoDB datasource driver for **CakePHP 5** — the modern successor to
 [giginc/mongodb](https://github.com/giginc/mongodb-cakephp3).
@@ -21,14 +21,14 @@ CakePHP 5 conventions (fluent query builder, marshaller, entities) and does
 ## Installation
 
 ```bash
-composer require giginc/cakephp5-mongodb-driver
+composer require giginc/cakephp5-driver-mongodb
 ```
 
 Then load the plugin (optional — the package only contributes a Connection/
 Driver/Table base, so loading is not strictly required):
 
 ```bash
-bin/cake plugin load Giginc/Cakephp5MongodbDriver
+bin/cake plugin load Giginc/Cakephp5DriverMongodb
 ```
 
 ## Configuration
@@ -38,8 +38,8 @@ In `config/app.php`:
 ```php
 'Datasources' => [
     'mongo' => [
-        'className' => \Giginc\Cakephp5MongodbDriver\Database\Connection::class,
-        'driver'    => \Giginc\Cakephp5MongodbDriver\Database\Driver\Mongodb::class,
+        'className' => \Giginc\Cakephp5DriverMongodb\Database\Connection::class,
+        'driver'    => \Giginc\Cakephp5DriverMongodb\Database\Driver\Mongodb::class,
         'host'      => 'localhost',
         'port'      => 27017,
         'database'  => 'my_database',
@@ -57,7 +57,7 @@ In `config/app.php`:
 // src/Model/Table/UsersTable.php
 namespace App\Model\Table;
 
-use Giginc\Cakephp5MongodbDriver\ORM\Table;
+use Giginc\Cakephp5DriverMongodb\ORM\Table;
 
 class UsersTable extends Table
 {
@@ -92,12 +92,12 @@ $users->delete($entity);
 
 | Old (`giginc/mongodb`)                                   | New                                                            |
 |----------------------------------------------------------|----------------------------------------------------------------|
-| `Giginc\Mongodb\Database\Connection`                     | `Giginc\Cakephp5MongodbDriver\Database\Connection`             |
-| `Giginc\Mongodb\Database\Driver\Mongodb`                 | `Giginc\Cakephp5MongodbDriver\Database\Driver\Mongodb`         |
-| `Giginc\Mongodb\ORM\Table`                               | `Giginc\Cakephp5MongodbDriver\ORM\Table`                       |
-| `Giginc\Mongodb\ORM\Document`                            | `Giginc\Cakephp5MongodbDriver\ORM\Document`                    |
-| `Giginc\Mongodb\ORM\ResultSet`                           | `Giginc\Cakephp5MongodbDriver\ORM\ResultSet`                   |
-| `Giginc\Mongodb\ORM\MongoFinder` / `MongoQuery`          | `Giginc\Cakephp5MongodbDriver\ORM\Query` (fluent, new design)  |
+| `Giginc\Mongodb\Database\Connection`                     | `Giginc\Cakephp5DriverMongodb\Database\Connection`             |
+| `Giginc\Mongodb\Database\Driver\Mongodb`                 | `Giginc\Cakephp5DriverMongodb\Database\Driver\Mongodb`         |
+| `Giginc\Mongodb\ORM\Table`                               | `Giginc\Cakephp5DriverMongodb\ORM\Table`                       |
+| `Giginc\Mongodb\ORM\Document`                            | `Giginc\Cakephp5DriverMongodb\ORM\Document`                    |
+| `Giginc\Mongodb\ORM\ResultSet`                           | `Giginc\Cakephp5DriverMongodb\ORM\ResultSet`                   |
+| `Giginc\Mongodb\ORM\MongoFinder` / `MongoQuery`          | `Giginc\Cakephp5DriverMongodb\ORM\Query` (fluent, new design)  |
 
 ### API changes (non-exhaustive)
 

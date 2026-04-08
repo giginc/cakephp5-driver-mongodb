@@ -1,19 +1,19 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5MongodbDriver;
+namespace Giginc\Cakephp5DriverMongodb;
 
 use Cake\Core\BasePlugin;
 use Cake\Core\PluginApplicationInterface;
 
 /**
  * Plugin entry point so the package can be loaded via
- * `bin/cake plugin load Giginc/Cakephp5MongodbDriver` or auto-discovered
+ * `bin/cake plugin load Giginc/Cakephp5DriverMongodb` or auto-discovered
  * through the `extra.cakephp.plugin` composer key.
  */
 class Plugin extends BasePlugin
 {
-    protected ?string $name = 'Giginc/Cakephp5MongodbDriver';
+    protected ?string $name = 'Giginc/Cakephp5DriverMongodb';
 
     protected bool $bootstrapEnabled = false;
 
