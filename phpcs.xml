@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<ruleset name="Giginc/Cakephp5MongodbDriver">
+    <description>Coding standard for giginc/cakephp5-mongodb-driver.</description>
+
+    <file>src</file>
+    <file>tests</file>
+
+    <arg name="colors"/>
+    <arg value="p"/>
+
+    <rule ref="CakePHP"/>
+</ruleset>
