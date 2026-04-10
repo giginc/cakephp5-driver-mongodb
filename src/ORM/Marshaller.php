@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace Giginc\Mongodb\ORM;
 
+use Cake\Datasource\EntityInterface;
 use Cake\ORM\Entity;
 use DateTimeInterface;
 use MongoDB\BSON\ObjectId;
@@ -52,9 +53,9 @@ class Marshaller
     /**
      * @return array<string, mixed>
      */
-    public function toBson(Entity|array $source): array
+    public function toBson(EntityInterface|array $source): array
     {
-        $data = $source instanceof Entity ? $source->toArray() : $source;
+        $data = $source instanceof EntityInterface ? $source->toArray() : $source;
 
         return self::convert($data);
     }

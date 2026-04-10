@@ -65,7 +65,9 @@ class Table extends CakeTable
         }
 
         // Cake\Database\Connection など他種は親に委譲
-        parent::setConnection($connection);
+        if ($connection instanceof \Cake\Database\Connection) {
+            parent::setConnection($connection);
+        }
 
         return $this;
     }
@@ -190,11 +192,14 @@ class Table extends CakeTable
      */
     public function find(string $type = 'all', mixed ...$args): \Cake\ORM\Query\SelectQuery
     {
+        /** @var class-string<\Cake\ORM\Entity> $entityClass */
+        $entityClass = $this->getEntityClass();
+
         return new Query(
             $this,
             $this->getMongoCollection(),
             $this->getAlias(),
-            $this->getEntityClass(),
+            $entityClass,
         );
     }
 
@@ -382,8 +387,8 @@ class Table extends CakeTable
     }
 
     /**
-     * @param \Cake\ORM\Query\SelectQuery|\Closure|array|string $fields
-     * @param \Closure|array|string|null $conditions
+     * @param \Cake\Database\Expression\QueryExpression|\Closure|array|string $fields
+     * @param \Cake\Database\Expression\QueryExpression|\Closure|array|string|null $conditions
      * @return int
      */
     public function updateAll(QueryExpression|Closure|array|string $fields, QueryExpression|Closure|array|string|null $conditions): int
