@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5DriverMongodb\Test\TestCase\ORM;
+namespace Giginc\Mongodb\Test\TestCase\ORM;
 
-use Giginc\Cakephp5DriverMongodb\ORM\Table;
+use Giginc\Mongodb\ORM\Table;
 
 /**
  * Minimal concrete Table used by TableTest.

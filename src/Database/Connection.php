@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5DriverMongodb\Database;
+namespace Giginc\Mongodb\Database;
 
 use Cake\Datasource\ConnectionInterface;
-use Giginc\Cakephp5DriverMongodb\Database\Driver\Mongodb;
+use Giginc\Mongodb\Database\Driver\Mongodb;
 use Psr\Log\LoggerInterface;
 use Psr\SimpleCache\CacheInterface;
 use RuntimeException;

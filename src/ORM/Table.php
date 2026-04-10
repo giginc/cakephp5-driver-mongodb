@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5DriverMongodb\ORM;
+namespace Giginc\Mongodb\ORM;
 
 use ArrayObject;
 use Cake\Database\Expression\QueryExpression;
@@ -14,8 +14,8 @@ use Cake\Datasource\Exception\RecordNotFoundException;
 use Cake\ORM\Entity;
 use Cake\ORM\Table as CakeTable;
 use Closure;
-use Giginc\Cakephp5DriverMongodb\Database\Connection as MongoConnection;
-use Giginc\Cakephp5DriverMongodb\Database\Driver\Mongodb;
+use Giginc\Mongodb\Database\Connection as MongoConnection;
+use Giginc\Mongodb\Database\Driver\Mongodb;
 use MongoDB\BSON\ObjectId;
 use MongoDB\Collection as MongoCollection;
 use RuntimeException;
@@ -44,7 +44,7 @@ class Table extends CakeTable
      * MongoDB 用の接続。Cake の親クラスの $_connection は Cake\Database\Connection を
      * 要求するため、それとは別に保持する。
      *
-     * @var \Giginc\Cakephp5DriverMongodb\Database\Connection|null
+     * @var \Giginc\Mongodb\Database\Connection|null
      */
     private ?MongoConnection $mongoConnection = null;
 
@@ -73,7 +73,7 @@ class Table extends CakeTable
     /**
      * MongoDB 用接続を返す。
      *
-     * @return \Giginc\Cakephp5DriverMongodb\Database\Connection
+     * @return \Giginc\Mongodb\Database\Connection
      */
     public function getMongoConnection(): MongoConnection
     {
@@ -162,7 +162,7 @@ class Table extends CakeTable
     /**
      * 内部用 Mongo Marshaller。
      *
-     * @return \Giginc\Cakephp5DriverMongodb\ORM\Marshaller
+     * @return \Giginc\Mongodb\ORM\Marshaller
      */
     private function mongoMarshaller(): Marshaller
     {
@@ -186,7 +186,7 @@ class Table extends CakeTable
      *
      * @param string $type
      * @param mixed ...$args
-     * @return \Giginc\Cakephp5DriverMongodb\ORM\Query
+     * @return \Giginc\Mongodb\ORM\Query
      */
     public function find(string $type = 'all', mixed ...$args): \Cake\ORM\Query\SelectQuery
     {

@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<ruleset name="Giginc/Cakephp5DriverMongodb">
+<ruleset name="Giginc/Mongodb">
     <description>Coding standard for giginc/cakephp5-driver-mongodb.</description>
 
     <file>src</file>

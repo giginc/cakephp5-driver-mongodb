@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Giginc\\Cakephp5DriverMongodb\\": "src/"
+            "Giginc\\Mongodb\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Giginc\\Cakephp5DriverMongodb\\Test\\": "tests/"
+            "Giginc\\Mongodb\\Test\\": "tests/"
         }
     },
     "scripts": {
@@ -40,7 +40,7 @@
     },
     "extra": {
         "cakephp": {
-            "plugin": "Giginc/Cakephp5DriverMongodb"
+            "plugin": "Giginc/Mongodb"
         }
     },
     "minimum-stability": "stable",

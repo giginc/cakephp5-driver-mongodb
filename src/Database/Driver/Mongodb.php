@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5DriverMongodb\Database\Driver;
+namespace Giginc\Mongodb\Database\Driver;
 
 use MongoDB\Client;
 use MongoDB\Collection;
@@ -12,7 +12,7 @@ use RuntimeException;
  * MongoDB driver wrapper.
  *
  * Holds a single MongoDB\Client instance and exposes the configured database
- * and its collections. Constructed by {@see \Giginc\Cakephp5DriverMongodb\Database\Connection},
+ * and its collections. Constructed by {@see \Giginc\Mongodb\Database\Connection},
  * not directly by user code.
  *
  * Note: SSH tunnelling (present in the legacy giginc/mongodb plugin) is

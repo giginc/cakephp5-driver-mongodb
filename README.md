@@ -28,7 +28,7 @@ Then load the plugin (optional — the package only contributes a Connection/
 Driver/Table base, so loading is not strictly required):
 
 ```bash
-bin/cake plugin load Giginc/Cakephp5DriverMongodb
+bin/cake plugin load Giginc/Mongodb
 ```
 
 ## Configuration
@@ -38,8 +38,8 @@ In `config/app.php`:
 ```php
 'Datasources' => [
     'mongo' => [
-        'className' => \Giginc\Cakephp5DriverMongodb\Database\Connection::class,
-        'driver'    => \Giginc\Cakephp5DriverMongodb\Database\Driver\Mongodb::class,
+        'className' => \Giginc\Mongodb\Database\Connection::class,
+        'driver'    => \Giginc\Mongodb\Database\Driver\Mongodb::class,
         'host'      => 'localhost',
         'port'      => 27017,
         'database'  => 'my_database',
@@ -57,7 +57,7 @@ In `config/app.php`:
 // src/Model/Table/UsersTable.php
 namespace App\Model\Table;
 
-use Giginc\Cakephp5DriverMongodb\ORM\Table;
+use Giginc\Mongodb\ORM\Table;
 
 class UsersTable extends Table
 {
@@ -92,12 +92,12 @@ $users->delete($entity);
 
 | Old (`giginc/mongodb`)                                   | New                                                            |
 |----------------------------------------------------------|----------------------------------------------------------------|
-| `Giginc\Mongodb\Database\Connection`                     | `Giginc\Cakephp5DriverMongodb\Database\Connection`             |
-| `Giginc\Mongodb\Database\Driver\Mongodb`                 | `Giginc\Cakephp5DriverMongodb\Database\Driver\Mongodb`         |
-| `Giginc\Mongodb\ORM\Table`                               | `Giginc\Cakephp5DriverMongodb\ORM\Table`                       |
-| `Giginc\Mongodb\ORM\Document`                            | `Giginc\Cakephp5DriverMongodb\ORM\Document`                    |
+| `Giginc\Mongodb\Database\Connection`                     | `Giginc\Mongodb\Database\Connection`             |
+| `Giginc\Mongodb\Database\Driver\Mongodb`                 | `Giginc\Mongodb\Database\Driver\Mongodb`         |
+| `Giginc\Mongodb\ORM\Table`                               | `Giginc\Mongodb\ORM\Table`                       |
+| `Giginc\Mongodb\ORM\Document`                            | `Giginc\Mongodb\ORM\Document`                    |
 | `Giginc\Mongodb\ORM\ResultSet`                           | `Cake\Datasource\ResultSetDecorator` (Cake 標準を直接利用)     |
-| `Giginc\Mongodb\ORM\MongoFinder` / `MongoQuery`          | `Giginc\Cakephp5DriverMongodb\ORM\Query` (fluent, new design)  |
+| `Giginc\Mongodb\ORM\MongoFinder` / `MongoQuery`          | `Giginc\Mongodb\ORM\Query` (fluent, new design)  |
 
 ### API changes (non-exhaustive)
 

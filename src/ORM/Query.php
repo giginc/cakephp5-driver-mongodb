@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Giginc\Cakephp5DriverMongodb\ORM;
+namespace Giginc\Mongodb\ORM;
 
 use Cake\Database\ExpressionInterface;
 use Cake\Datasource\ResultSetDecorator;
@@ -45,10 +45,10 @@ class Query extends CakeSelectQuery
     private string $mongoEntityClass;
 
     /** @var array<string, mixed> */
-    private array $mongoWhere = [];
+    private array $where = [];
 
     /** @var array<string, int> */
-    private array $mongoSelect = [];
+    private array $select = [];
 
     /** @var array<string, int> */
     private array $mongoOrder = [];
@@ -88,11 +88,11 @@ class Query extends CakeSelectQuery
         bool $overwrite = false,
     ) {
         if ($overwrite) {
-            $this->mongoWhere = [];
+            $this->where = [];
         }
         if (is_array($conditions)) {
-            $this->mongoWhere = array_replace(
-                $this->mongoWhere,
+            $this->where = array_replace(
+                $this->where,
                 $this->normalizeConditions($conditions),
             );
         }
@@ -110,16 +110,16 @@ class Query extends CakeSelectQuery
         bool $overwrite = false,
     ) {
         if ($overwrite) {
-            $this->mongoSelect = [];
+            $this->select = [];
         }
         if (is_array($fields)) {
             foreach ($fields as $f) {
                 if (is_string($f)) {
-                    $this->mongoSelect[$f] = 1;
+                    $this->select[$f] = 1;
                 }
             }
         } elseif (is_string($fields)) {
-            $this->mongoSelect[$fields] = 1;
+            $this->select[$fields] = 1;
         }
 
         return $this;
@@ -194,7 +194,7 @@ class Query extends CakeSelectQuery
      */
     public function all(): ResultSetInterface
     {
-        $cursor = $this->mongoCollection->find($this->mongoWhere, $this->buildOptions());
+        $cursor = $this->mongoCollection->find($this->where, $this->buildOptions());
         $entities = [];
         foreach ($cursor as $doc) {
             $entities[] = (new Document($doc, $this->mongoRegistryAlias))
@@ -211,7 +211,7 @@ class Query extends CakeSelectQuery
     {
         $opts = $this->buildOptions();
         $opts['limit'] = 1;
-        $doc = $this->mongoCollection->findOne($this->mongoWhere, $opts);
+        $doc = $this->mongoCollection->findOne($this->where, $opts);
         if ($doc === null) {
             return null;
         }
@@ -224,7 +224,7 @@ class Query extends CakeSelectQuery
      */
     public function count(): int
     {
-        return $this->mongoCollection->countDocuments($this->mongoWhere);
+        return $this->mongoCollection->countDocuments($this->where);
     }
 
     /**
@@ -249,8 +249,8 @@ class Query extends CakeSelectQuery
     private function buildOptions(): array
     {
         $opts = [];
-        if ($this->mongoSelect !== []) {
-            $opts['projection'] = $this->mongoSelect;
+        if ($this->select !== []) {
+            $opts['projection'] = $this->select;
         }
         if ($this->mongoOrder !== []) {
             $opts['sort'] = $this->mongoOrder;
