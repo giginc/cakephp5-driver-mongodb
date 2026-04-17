@@ -55,18 +55,29 @@ In `config/app.php`:
 
 ```php
 // src/Model/Table/UsersTable.php
+<?php
+declare(strict_types=1);
+
 namespace App\Model\Table;
 
 use Giginc\Mongodb\ORM\Table;
 
 class UsersTable extends Table
 {
+    public function initialize(array $config): void
+    {
+        parent::initialize($config);
+        $this->setConnection(ConnectionManager::get('mongo'));
+    }
+
     protected ?string $table = 'users';
 }
 ```
 
 ```php
-$users = new UsersTable(['connection' => ConnectionManager::get('mongo')]);
+use App\Model\Table\TestsTable;
+
+$users = new UsersTable();
 
 // Fluent queries
 $list = $users->find()
@@ -83,7 +94,9 @@ $entity = $users->newEntity(['name' => 'alice', 'status' => 'active']);
 $users->save($entity);
 
 // Delete
-$users->delete($entity);
+$one = $users->find()
+    ->first();
+$users->delete($one);
 ```
 
 ## Migration guide (from `giginc/mongodb`)
